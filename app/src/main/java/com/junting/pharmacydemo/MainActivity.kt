@@ -45,12 +45,7 @@ class MainActivity : AppCompatActivity(), MainAdapter.IItemClickListener {
     }
 
     private fun initView() {
-        val adapterCounty = ArrayAdapter(
-            this,
-            android.R.layout.simple_spinner_dropdown_item,
-            CountyUtil.getAllCountiesName()
-        )
-        binding.spinnerCounty.adapter = adapterCounty
+        setSpinnerCounty()
 
         //監聽「縣市」下拉選單選擇
         binding.spinnerCounty.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
@@ -89,7 +84,6 @@ class MainActivity : AppCompatActivity(), MainAdapter.IItemClickListener {
         }
 
 
-
         // 定義 LayoutManager 為 LinearLayoutManager
         viewManager = LinearLayoutManager(this)
 
@@ -109,6 +103,17 @@ class MainActivity : AppCompatActivity(), MainAdapter.IItemClickListener {
 //            )
         }
     }
+    private  fun setSpinnerCounty(){
+        val adapterCounty = ArrayAdapter(
+            this,
+            android.R.layout.simple_spinner_dropdown_item,
+            CountyUtil.getAllCountiesName()
+        )
+        binding.spinnerCounty.adapter = adapterCounty
+        binding.spinnerCounty.setSelection(CountyUtil.getCountyIndexByName(currentCounty))
+        setSpinnerTown()
+    }
+
     private fun setSpinnerTown() {
         val adapterTown = ArrayAdapter(
             this,
