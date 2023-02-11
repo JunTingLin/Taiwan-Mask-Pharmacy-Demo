@@ -1,24 +1,22 @@
 package com.junting.pharmacydemo.data
 
-import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
 data class PharmacyInfo(
-    @SerializedName("features")
     val features: List<Feature>,
     val type: String
-): Serializable
+):Serializable
 
 data class Feature(
     val geometry: Geometry,
     val properties: Properties,
     val type: String
-): Serializable
+):Serializable
 
 data class Geometry(
     val coordinates: List<Double>,
     val type: String
-): Serializable
+):Serializable
 
 data class Properties(
     val address: String,
@@ -36,4 +34,4 @@ data class Properties(
     val town: String,
     val updated: String,
     val website: String
-): Serializable
+):Serializable

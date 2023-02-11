@@ -1,4 +1,4 @@
-package com.junting.pharmacydemo.utils
+package com.junting.pharmacydemo.util
 
 import okhttp3.*
 import okio.IOException

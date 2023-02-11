@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     android:paddingBottom="20dp">
 
     <androidx.cardview.widget.CardView
@@ -11,11 +11,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="290dp"
         android:layout_marginRight="10dp"
         app:cardCornerRadius="8dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/cardViewDown">
+        app:layout_constraintBottom_toTopOf="@+id/cardViewDown"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layout_item"
@@ -171,19 +171,20 @@
         android:id="@+id/cardViewDown"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp"
         app:cardCornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardViewTop"
-        app:layout_constraintBottom_toBottomOf="parent">
 
-        <androidx.fragment.app.FragmentContainerView
+        >
+
+        <fragment
             android:id="@+id/map"
             android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:context=".PharmacyDetailActivity" />
+            tools:context=".PharmacyDetailActivity"
+            tools:layout="@layout/solid" />
 
 
     </androidx.cardview.widget.CardView>

@@ -1,4 +1,4 @@
-package com.thishkt.pharmacydemo.Util
+package com.junting.pharmacydemo.Util
 
 object CountyUtil {
     private val counties = listOf(

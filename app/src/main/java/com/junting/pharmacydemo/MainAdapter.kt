@@ -1,4 +1,4 @@
-package com.junting.pharmacydemo.adapter
+package com.junting.pharmacydemo
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,7 +6,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.junting.pharmacydemo.data.Feature
 import com.junting.pharmacydemo.databinding.ItemViewBinding
 
-class MainAdapter(private val itemClickListener: IItemClickListener ) :
+
+class MainAdapter(private val itemClickListener: IItemClickListener) :
     RecyclerView.Adapter<MainAdapter.MyViewHolder>() {
 
     var pharmacyList: List<Feature> = emptyList()
@@ -26,7 +27,7 @@ class MainAdapter(private val itemClickListener: IItemClickListener ) :
         holder.itemViewBinding.tvAdultAmount.text = pharmacyList[position].properties.mask_adult.toString()
         holder.itemViewBinding.tvChildAmount.text = pharmacyList[position].properties.mask_child.toString()
 
-        holder.itemViewBinding.layoutItem.setOnClickListener{
+        holder.itemViewBinding.layoutItem.setOnClickListener {
             itemClickListener.onItemClickListener(pharmacyList[position])
         }
     }
@@ -38,9 +39,8 @@ class MainAdapter(private val itemClickListener: IItemClickListener ) :
     class MyViewHolder(val itemViewBinding: ItemViewBinding) :
         RecyclerView.ViewHolder(itemViewBinding.root)
 
-    interface IItemClickListener{
+    interface IItemClickListener {
         fun onItemClickListener(data: Feature)
     }
-
 
 }
